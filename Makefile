@@ -6,7 +6,7 @@
 #    By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/24 15:47:40 by amtan             #+#    #+#              #
-#    Updated: 2025/12/24 20:30:31 by amtan            ###   ########.fr        #
+#    Updated: 2025/12/24 21:00:01 by amtan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ SRC_MAIN 		:= main.c
 DIRS 			:= ops parse sort stack utils
 
 FILES_ops   	:= ops_recorder.c
-FILES_parse 	:= 
+FILES_parse 	:= parse_args.c atoi_strict.c duplicates.c
 FILES_sort  	:= 
 FILES_stack 	:= 
 FILES_utils 	:= 

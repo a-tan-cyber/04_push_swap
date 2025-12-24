@@ -6,7 +6,7 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 19:52:48 by amtan             #+#    #+#             */
-/*   Updated: 2025/12/23 19:55:10 by amtan            ###   ########.fr       */
+/*   Updated: 2025/12/24 23:25:29 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,8 @@ int		ops_init(t_ops *ops);
 void	ops_free(t_ops *ops);
 int		ops_append(t_ops *ops, t_op op);
 int		ops_print_fd(const t_ops *ops, int fd);
+int		atoi_strict(const char *s, int *out);
+// int		parse_args(int argc, char **argv, int **out_vals, size_t *out_n);
+
 
 #endif
