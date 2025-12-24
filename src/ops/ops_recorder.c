@@ -6,12 +6,12 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 19:55:40 by amtan             #+#    #+#             */
-/*   Updated: 2025/12/23 19:55:53 by amtan            ###   ########.fr       */
+/*   Updated: 2025/12/24 20:49:49 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include "libft.h"
+#include "push_swap.h"
 #include <stdlib.h>
 #include <unistd.h>
 
