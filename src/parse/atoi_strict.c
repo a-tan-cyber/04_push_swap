@@ -6,7 +6,7 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 21:10:46 by amtan             #+#    #+#             */
-/*   Updated: 2025/12/24 23:16:20 by amtan            ###   ########.fr       */
+/*   Updated: 2025/12/25 11:51:41 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	parse_sign(const char **s, int *sign)
 
 int	atoi_strict(const char *s, int *out)
 {
-	long	res;
+	long	result;
 	long	limit;
 	int		sign;
 	int		d;
@@ -39,17 +39,17 @@ int	atoi_strict(const char *s, int *out)
 	limit = INT_MAX;
 	if (sign < 0)
 		limit = -(long)INT_MIN;
-	res = 0;
+	result = 0;
 	while (*s >= '0' && *s <= '9')
 	{
 		d = *s - '0';
-		if (res > (limit - d) / 10)
+		if (result > (limit - d) / 10)
 			return (0);
-		res = res * 10 + d;
+		result = result * 10 + d;
 		s++;
 	}
 	if (*s)
 		return (0);
-	*out = (int)(res * sign);
+	*out = (int)(result * sign);
 	return (1);
 }
