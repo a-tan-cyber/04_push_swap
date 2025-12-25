@@ -6,7 +6,7 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 19:52:48 by amtan             #+#    #+#             */
-/*   Updated: 2025/12/25 12:41:54 by amtan            ###   ########.fr       */
+/*   Updated: 2025/12/25 14:16:15 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,8 @@ int		ops_append(t_ops *ops, t_op op);
 int		ops_print_fd(const t_ops *ops, int fd);
 int		atoi_strict(const char *s, int *out);
 int		parse_args(int argc, char **argv, int **out_vals, size_t *out_n);
+void	sort_int_array(int *a, size_t n);
+int 	has_duplicates(const int *sorted, size_t n);
+int		rank_values(int *vals, size_t n);
 
 #endif
