@@ -6,7 +6,7 @@
 #    By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/24 15:47:40 by amtan             #+#    #+#              #
-#    Updated: 2025/12/24 21:00:01 by amtan            ###   ########.fr        #
+#    Updated: 2025/12/25 17:27:11 by amtan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,10 +31,10 @@ SRC_MAIN 		:= main.c
 DIRS 			:= ops parse sort stack utils
 
 FILES_ops   	:= ops_recorder.c
-FILES_parse 	:= parse_args.c atoi_strict.c duplicates.c
+FILES_parse 	:= atoi_strict.c has_duplicates.c parse_args.c rank_values.c  
 FILES_sort  	:= 
 FILES_stack 	:= 
-FILES_utils 	:= 
+FILES_utils 	:= sort_int_array.c
 
 SRCS 			:= $(addprefix $(SRCDIR)/, $(SRC_MAIN)) \
 					$(foreach d,$(DIRS),$(addprefix $(SRCDIR)/$(d)/,$(FILES_$(d))))
