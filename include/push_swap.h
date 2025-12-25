@@ -6,7 +6,7 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 19:52:48 by amtan             #+#    #+#             */
-/*   Updated: 2025/12/25 19:54:07 by amtan            ###   ########.fr       */
+/*   Updated: 2025/12/26 00:00:00 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,16 @@ int		atoi_strict(const char *s, int *out);
 int		has_duplicates(const int *sorted, size_t n);
 int		parse_args(int argc, char **argv, int **out_vals, size_t *out_n);
 int		rank_values(int *vals, size_t n);
+
+/* src/stack/ */
+int		build_stack_from_vals(t_stack *a, const int *vals, size_t n);
+t_node	*node_new(int rank);
+void	stack_clear(t_stack *s);
+void	stack_init(t_stack *s);
+/* src/stack/stack_push_pop.c */
+void	stack_push_top(t_stack *s, t_node *node);
+void	stack_push_bottom(t_stack *s, t_node *node);
+t_node	*stack_pop_top(t_stack *s);
 
 /* src/utils/ */
 void	sort_int_array(int *a, size_t n);
