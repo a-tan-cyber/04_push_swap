@@ -6,7 +6,7 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 19:55:40 by amtan             #+#    #+#             */
-/*   Updated: 2025/12/24 20:49:49 by amtan            ###   ########.fr       */
+/*   Updated: 2025/12/25 20:02:01 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,20 +44,16 @@ static int	ops_write_op(int fd, t_op op)
 
 int	ops_init(t_ops *ops)
 {
-	if (!ops)
-		return (0);
-	ops->buf = (uint8_t *)malloc(OPS_INIT_CAP);
+	ops->buf = (uint8_t *)malloc(PS_OPS_INIT_CAP);
 	if (!ops->buf)
 		return (0);
 	ops->len = 0;
-	ops->cap = OPS_INIT_CAP;
+	ops->cap = PS_OPS_INIT_CAP;
 	return (1);
 }
 
 void	ops_free(t_ops *ops)
 {
-	if (!ops)
-		return ;
 	free(ops->buf);
 	ops->buf = NULL;
 	ops->len = 0;
@@ -69,13 +65,11 @@ int	ops_append(t_ops *ops, t_op op)
 	uint8_t	*new_buf;
 	size_t	new_cap;
 
-	if (!ops)
-		return (0);
 	if (ops->len >= ops->cap)
 	{
 		new_cap = ops->cap;
 		if (new_cap == 0)
-			new_cap = OPS_INIT_CAP;
+			new_cap = PS_OPS_INIT_CAP;
 		while (new_cap <= ops->len)
 			new_cap *= 2;
 		new_buf = (uint8_t *)malloc(new_cap);
@@ -96,8 +90,6 @@ int	ops_print_fd(const t_ops *ops, int fd)
 {
 	size_t	i;
 
-	if (!ops || fd < 0)
-		return (0);
 	i = 0;
 	while (i < ops->len)
 	{
