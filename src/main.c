@@ -6,7 +6,7 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 15:29:59 by amtan             #+#    #+#             */
-/*   Updated: 2025/12/25 17:05:37 by amtan            ###   ########.fr       */
+/*   Updated: 2025/12/26 17:36:35 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,24 @@ int	main(int argc, char **argv)
 {
 	int		*vals;
 	size_t	n;
+	t_ctx	ctx;
 
 	if (argc <= 1)
 		return (0);
 	if (!parse_args(argc, argv, &vals, &n))
-	{
-		write(2, "Error\n", 6);
-		return (1);
-	}
+		return (write_error_ret_1());
 	if (n < 2)
-	{
-		free(vals);
-		return (0);
-	}
+		return (free_vals_ret_0(vals));
 	if (!rank_values(vals, n))
-	{
-		free(vals);
-		write(2, "Error\n", 6);
-		return (2);
-	}
-	free(vals);
-	return (0);
+		return (free_vals_write_error_ret_1(vals));
+	if (!ctx_init(&ctx))
+		return (free_vals_write_error_ret_1(vals));
+	if (!build_stack_from_vals(&ctx.a, vals, n))
+		return (free_vals_write_error_ret_1(vals));
+	if (!push_swap_run(&ctx))
+		return (free_vals_write_error_ret_1(vals));
+	if (!ops_print_fd(&ctx.ops, 1))
+		return (free_vals_write_error_ret_1(vals));
+	ctx_free(&ctx);
+	return (free_vals_ret_0(vals));
 }
