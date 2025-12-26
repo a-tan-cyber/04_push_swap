@@ -6,7 +6,7 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 19:52:48 by amtan             #+#    #+#             */
-/*   Updated: 2025/12/26 15:37:06 by amtan            ###   ########.fr       */
+/*   Updated: 2025/12/26 16:59:46 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,9 @@ void	stack_push_bottom(t_stack *s, t_node *node);
 t_node	*stack_pop_top(t_stack *s);
 t_node	*stack_pop_bottom(t_stack *s);
 
+/* src/utils/ctx_init_free.c */
+int		ctx_init(t_ctx *ctx);
+void	ctx_free(t_ctx *ctx);
 /* src/utils/ */
 void	sort_int_array(int *a, size_t n);
 
