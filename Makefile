@@ -6,7 +6,7 @@
 #    By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/24 15:47:40 by amtan             #+#    #+#              #
-#    Updated: 2025/12/26 12:06:43 by amtan            ###   ########.fr        #
+#    Updated: 2025/12/26 20:21:30 by amtan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,12 +30,13 @@ HDRS        	:= include/push_swap.h
 SRC_MAIN 		:= main.c
 DIRS 			:= ops parse sort stack utils
 
-FILES_ops   	:= ops_recorder.c
+FILES_ops   	:= op_push.c op_rev_rotate.c op_rotate.c op_swap.c\
+					ops_recorder.c
 FILES_parse 	:= atoi_strict.c has_duplicates.c parse_args.c rank_values.c  
-FILES_sort  	:= 
+FILES_sort  	:= push_swap_run.c
 FILES_stack 	:= build_stack_from_vals.c node_new.c stack_clear.c \
 					stack_init.c stack_primitives.c stack_push_pop.c
-FILES_utils 	:= sort_int_array.c
+FILES_utils 	:= ctx_init_free.c free_vals_write_error.c sort_int_array.c
 
 SRCS 			:= $(addprefix $(SRCDIR)/, $(SRC_MAIN)) \
 					$(foreach d,$(DIRS),$(addprefix $(SRCDIR)/$(d)/,$(FILES_$(d))))

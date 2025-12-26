@@ -6,11 +6,13 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 17:13:13 by amtan             #+#    #+#             */
-/*   Updated: 2025/12/26 17:36:56 by amtan            ###   ########.fr       */
+/*   Updated: 2025/12/26 20:22:35 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
+#include <unistd.h>
 
 int	free_vals_ret_0(int *vals)
 {
