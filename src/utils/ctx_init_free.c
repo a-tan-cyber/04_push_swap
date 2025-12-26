@@ -6,7 +6,7 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 16:56:01 by amtan             #+#    #+#             */
-/*   Updated: 2025/12/26 17:01:04 by amtan            ###   ########.fr       */
+/*   Updated: 2025/12/26 20:35:02 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ctx_init(t_ctx *ctx)
 {
 	stack_init(&ctx->a);
-	stack_init(&ctx->a);
+	stack_init(&ctx->b);
 	return (ops_init(&ctx->ops));
 }
 
