@@ -6,7 +6,7 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 19:52:48 by amtan             #+#    #+#             */
-/*   Updated: 2025/12/26 17:37:16 by amtan            ###   ########.fr       */
+/*   Updated: 2025/12/26 20:43:48 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ int		rank_values(int *vals, size_t n);
 
 /* src/sort/ */
 int		push_swap_run(t_ctx *ctx);
+int		stack_is_sorted(const t_stack *s);
 
 /* src/stack/ */
 int		build_stack_from_vals(t_stack *a, const int *vals, size_t n);
