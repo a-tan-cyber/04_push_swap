@@ -6,7 +6,7 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 19:52:48 by amtan             #+#    #+#             */
-/*   Updated: 2025/12/26 20:43:48 by amtan            ###   ########.fr       */
+/*   Updated: 2025/12/27 00:56:24 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,13 @@ int		rank_values(int *vals, size_t n);
 /* src/sort/ */
 int		push_swap_run(t_ctx *ctx);
 int		stack_is_sorted(const t_stack *s);
+int		sort_chunks(t_ctx *ctx);
+int		sort_small(t_ctx *ctx);
+/* src/sort/rotate_to.c */
+int		rotate_index_to_top_a(t_ctx *ctx, size_t idx);
+int		rotate_index_to_top_b(t_ctx *ctx, size_t idx);
+int		rotate_rank_to_top_a(t_ctx *ctx, int rank);
+int		rotate_rank_to_top_b(t_ctx *ctx, int rank);
 
 /* src/stack/ */
 int		build_stack_from_vals(t_stack *a, const int *vals, size_t n);
@@ -110,6 +117,8 @@ void	stack_push_bottom(t_stack *s, t_node *node);
 t_node	*stack_pop_top(t_stack *s);
 t_node	*stack_pop_bottom(t_stack *s);
 
+/* src/utils/ */
+void	sort_int_array(int *a, size_t n);
 /* src/utils/ctx_init_free.c */
 int		ctx_init(t_ctx *ctx);
 void	ctx_free(t_ctx *ctx);
@@ -117,7 +126,9 @@ void	ctx_free(t_ctx *ctx);
 int		free_vals_ret_0(int *vals);
 int		write_error_ret_1(void);
 int		free_vals_write_error_ret_1(int *vals);
-/* src/utils/ */
-void	sort_int_array(int *a, size_t n);
+/* src/utils/stack_index_of.c */
+size_t	stack_index_of_rank(const t_stack *s, int rank);
+size_t	stack_index_of_max(const t_stack *s);
+size_t	stack_index_of_min(const t_stack *s);
 
 #endif

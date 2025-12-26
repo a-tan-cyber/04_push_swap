@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_run.c                                    :+:      :+:    :+:   */
+/*   sort_chunks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/26 17:03:57 by amtan             #+#    #+#             */
-/*   Updated: 2025/12/27 00:54:13 by amtan            ###   ########.fr       */
+/*   Created: 2025/12/27 00:55:15 by amtan             #+#    #+#             */
+/*   Updated: 2025/12/27 00:59:02 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	push_swap_run(t_ctx *ctx)
+int	sort_chunks(t_ctx *ctx)
 {
-	if (stack_is_sorted(&ctx->a))
-		return (1);
-	if (ctx->a.size <= 5)
-		return (sort_small(ctx));
-	return (sort_chunks(ctx));
+	// TO-DO
+	(void)ctx;
+	return (0);
 }
