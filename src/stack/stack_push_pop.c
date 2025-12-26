@@ -6,7 +6,7 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/25 20:11:15 by amtan             #+#    #+#             */
-/*   Updated: 2025/12/25 23:43:30 by amtan            ###   ########.fr       */
+/*   Updated: 2025/12/26 11:51:33 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,24 @@ t_node	*stack_pop_top(t_stack *s)
 		s->bottom = NULL;
 	popped->next = NULL;
 	popped->prev = NULL;
+	s->size--;
+	return (popped);
+}
+
+t_node	*stack_pop_bottom(t_stack *s)
+{
+	t_node	*popped;
+
+	popped = s->bottom;
+	if (!popped)
+		return (NULL);
+	s->bottom = popped->prev;
+	if (s->bottom)
+		s->bottom->next = NULL;
+	else
+		s->top = NULL;
+	popped->prev = NULL;
+	popped->next = NULL;
 	s->size--;
 	return (popped);
 }
