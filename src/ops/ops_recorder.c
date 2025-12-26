@@ -6,7 +6,7 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 19:55:40 by amtan             #+#    #+#             */
-/*   Updated: 2025/12/25 20:02:01 by amtan            ###   ########.fr       */
+/*   Updated: 2025/12/26 15:54:57 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	ops_append(t_ops *ops, t_op op)
 		ops->cap = new_cap;
 	}
 	ops->buf[ops->len] = (uint8_t)op;
-	ops->len += 1;
+	ops->len++;
 	return (1);
 }
 
