@@ -6,11 +6,12 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 13:53:55 by amtan             #+#    #+#             */
-/*   Updated: 2025/12/07 19:42:52 by amtan            ###   ########.fr       */
+/*   Updated: 2025/12/27 18:54:26 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "libft.h"
 
 static char	*read_to_stash(int fd, char *stash);
 static char	*extract_line(char *stash);

@@ -6,11 +6,12 @@
 /*   By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/06 13:54:20 by amtan             #+#    #+#             */
-/*   Updated: 2025/12/27 18:25:19 by amtan            ###   ########.fr       */
+/*   Updated: 2025/12/27 18:54:58 by amtan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "libft.h"
 
 char	*free_and_ret_null(char *stash)
 {
