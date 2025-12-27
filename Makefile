@@ -6,7 +6,7 @@
 #    By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/24 15:47:40 by amtan             #+#    #+#              #
-#    Updated: 2025/12/27 00:57:59 by amtan            ###   ########.fr        #
+#    Updated: 2025/12/27 20:05:01 by amtan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,4 +71,40 @@ re				: fclean all
 
 -include $(DEPS)
 
-.PHONY			: all clean fclean re FORCE
+NAME_BONUS		:= checker
+OBJDIR_BONUS	:= obj_bonus
+
+FILES_checker	:= checker_main_bonus.c checker_apply_bonus.c
+FILES_utils_bonus := sort_int_array.c
+
+# checker needs: parse + stack + utils + stack_is_sorted
+SRCS_BONUS		:= $(addprefix $(SRCDIR)/checker/,$(FILES_checker)) \
+					$(addprefix $(SRCDIR)/parse/,$(FILES_parse)) \
+					$(addprefix $(SRCDIR)/stack/,$(FILES_stack)) \
+					$(addprefix $(SRCDIR)/utils/,$(FILES_utils_bonus)) \
+					$(SRCDIR)/sort/stack_is_sorted.c
+
+OBJS_BONUS		:= $(SRCS_BONUS:$(SRCDIR)/%.c=$(OBJDIR_BONUS)/%.o)
+DEPS_BONUS		:= $(OBJS_BONUS:.o=.d)
+
+bonus			: $(NAME_BONUS)
+
+$(NAME_BONUS)	: $(OBJS_BONUS) $(LIBFT)
+					$(CC) $(CFLAGS) $^ -o $@
+
+$(OBJDIR_BONUS)/%.o : $(SRCDIR)/%.c $(HDRS)
+					mkdir -p $(@D)
+					$(CC) $(CFLAGS) $(CPPFLAGS) -MMD -MP -c $< -o $@
+
+clean_bonus		:
+					$(RM) $(OBJS_BONUS) $(DEPS_BONUS)
+					$(RMDIR) $(OBJDIR_BONUS)
+
+fclean_bonus	: clean_bonus
+					$(RM) $(NAME_BONUS)
+
+re_bonus		: fclean_bonus bonus
+
+-include $(DEPS_BONUS)
+
+.PHONY : all bonus clean fclean re FORCE clean_bonus fclean_bonus re_bonus
