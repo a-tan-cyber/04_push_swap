@@ -6,7 +6,7 @@
 #    By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/18 17:21:55 by amtan             #+#    #+#              #
-#    Updated: 2025/12/23 19:32:13 by amtan            ###   ########.fr        #
+#    Updated: 2025/12/27 18:44:32 by amtan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ SRCS				= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
 						ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 						ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 						ft_lstclear.c ft_lstiter.c ft_lstmap.c \
-						ft_atoull.c ft_split_set.c 
+						ft_split_set.c get_next_line.c get_next_line_utils.c
 
 OBJS				= $(SRCS:.c=.o)
 
