@@ -6,7 +6,7 @@
 #    By: amtan <amtan@student.42singapore.sg>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/24 15:47:40 by amtan             #+#    #+#              #
-#    Updated: 2025/12/27 20:05:01 by amtan            ###   ########.fr        #
+#    Updated: 2026/01/05 15:09:54 by amtan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,6 @@ OBJDIR_BONUS	:= obj_bonus
 FILES_checker	:= checker_main_bonus.c checker_apply_bonus.c
 FILES_utils_bonus := sort_int_array.c
 
-# checker needs: parse + stack + utils + stack_is_sorted
 SRCS_BONUS		:= $(addprefix $(SRCDIR)/checker/,$(FILES_checker)) \
 					$(addprefix $(SRCDIR)/parse/,$(FILES_parse)) \
 					$(addprefix $(SRCDIR)/stack/,$(FILES_stack)) \
